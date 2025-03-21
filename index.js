@@ -70,9 +70,9 @@ elBtn2.addEventListener("click", function (evt) {
     let elResult = document.querySelector(".result5");
 
     let arr = elField.split(" ");
-    let max = arr[0];
+    let max = arr[0].trim();
     for (let i = 0; i < arr.length; i++) {
-        if (arr[i].length > max.length) max = arr[i];
+        if (arr[i].trim().length > max.length) max = arr[i].trim();
     }
     elResult.innerHTML = max;
     if (elField == "") elResult.innerHTML = "";
@@ -97,7 +97,7 @@ elBtn3.addEventListener("click", function (evt) {
     let arr = elField.split(" ");
 
     for (let i = 0; i < arr.length; i++) {
-        arr[i] = clear(arr[i]);
+        arr[i] = clear(arr[i].trim());
     }
     elResult.innerHTML = arr.join(" ");
     if (elField == "") elResult.innerHTML = "";
@@ -126,7 +126,7 @@ elBtn5.addEventListener("click", function (evt) {
     let arr = elField.split(" ");
     let count = 0;
     for (let i = 0; i < arr.length; i++) {
-        if (arr[i].includes(elInput)) count++;
+        if (arr[i].includes(elInput.trim())) count++;
     }
     elResult.innerHTML = count;
     if (elField == "" || elInput == "") elResult.innerHTML = "";
